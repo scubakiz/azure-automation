@@ -1,0 +1,6 @@
+@MT3GatewayV2_Gateway_HostAddress = http://localhost:5149
+
+GET {{MT3GatewayV2_Gateway_HostAddress}}/Calculations/
+Accept: application/json
+
+###

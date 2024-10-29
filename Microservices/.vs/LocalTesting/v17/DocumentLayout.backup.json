@@ -1,0 +1,884 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MIP\\AzureAutomations\\Microservices\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9DA8DDDD-B4DB-4E37-BA1B-DDAEE91345D8}|Gateway\\MT3Gateway-Step4\\MT3Gateway-Step4.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step4\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DA8DDDD-B4DB-4E37-BA1B-DDAEE91345D8}|Gateway\\MT3Gateway-Step4\\MT3Gateway-Step4.csproj|solutionrelative:gateway\\mt3gateway-step4\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3940A860-8748-445A-9BF7-E60545BFAF88}|docker-compose.dcproj|c:\\mip\\azureautomations\\microservices\\variables.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3940A860-8748-445A-9BF7-E60545BFAF88}|docker-compose.dcproj|solutionrelative:variables.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\services\\webcalculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\services\\webcalculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-gateway\\services\\calculateallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|solutionrelative:gateway\\mt3gateway-gateway\\services\\calculateallservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC2EA786-5915-4391-9EA8-22AED970A9C0}|Gateway\\MT3Gateway-Step2\\MT3Gateway-Step2.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC2EA786-5915-4391-9EA8-22AED970A9C0}|Gateway\\MT3Gateway-Step2\\MT3Gateway-Step2.csproj|solutionrelative:gateway\\mt3gateway-step2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\interfaces\\icalculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\interfaces\\icalculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step5\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|solutionrelative:gateway\\mt3gateway-step5\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\providers\\servicebusprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\providers\\servicebusprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3940A860-8748-445A-9BF7-E60545BFAF88}|docker-compose.dcproj|c:\\mip\\azureautomations\\microservices\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3940A860-8748-445A-9BF7-E60545BFAF88}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-gateway\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|solutionrelative:gateway\\mt3gateway-gateway\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-gateway\\mt3gateway-gateway.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|solutionrelative:gateway\\mt3gateway-gateway\\mt3gateway-gateway.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\providers\\dapreventbusprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\providers\\dapreventbusprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-status\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|solutionrelative:gateway\\mt3gateway-status\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|solutionrelative:gateway\\mt3gateway-step5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DA8DDDD-B4DB-4E37-BA1B-DDAEE91345D8}|Gateway\\MT3Gateway-Step4\\MT3Gateway-Step4.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DA8DDDD-B4DB-4E37-BA1B-DDAEE91345D8}|Gateway\\MT3Gateway-Step4\\MT3Gateway-Step4.csproj|solutionrelative:gateway\\mt3gateway-step4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\providers\\rabbitmqprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\providers\\rabbitmqprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\extensions\\commonextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\extensions\\commonextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|solutionrelative:gateway\\mt3gateway-gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\services\\iwebcalculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\services\\iwebcalculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92194FD9-BE26-4FCF-A53F-DDAC68CEBAA8}|Gateway\\MT3Gateway-Step1\\MT3Gateway-Step1.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92194FD9-BE26-4FCF-A53F-DDAC68CEBAA8}|Gateway\\MT3Gateway-Step1\\MT3Gateway-Step1.csproj|solutionrelative:gateway\\mt3gateway-step1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\providers\\daprserviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\providers\\daprserviceprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC2EA786-5915-4391-9EA8-22AED970A9C0}|Gateway\\MT3Gateway-Step2\\MT3Gateway-Step2.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step2\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC2EA786-5915-4391-9EA8-22AED970A9C0}|Gateway\\MT3Gateway-Step2\\MT3Gateway-Step2.csproj|solutionrelative:gateway\\mt3gateway-step2\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92194FD9-BE26-4FCF-A53F-DDAC68CEBAA8}|Gateway\\MT3Gateway-Step1\\MT3Gateway-Step1.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step1\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92194FD9-BE26-4FCF-A53F-DDAC68CEBAA8}|Gateway\\MT3Gateway-Step1\\MT3Gateway-Step1.csproj|solutionrelative:gateway\\mt3gateway-step1\\services\\calculationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-status\\mt3gateway-status.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|solutionrelative:gateway\\mt3gateway-status\\mt3gateway-status.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-status\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|solutionrelative:gateway\\mt3gateway-status\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-gateway\\mt3gateway-gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|solutionrelative:gateway\\mt3gateway-gateway\\mt3gateway-gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\interfaces\\icommunicationsprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\interfaces\\icommunicationsprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7871EEA9-DAC7-4952-9C2F-83E6C3648D1F}|Gateway\\MT3Gateway-Step3\\MT3Gateway-Step3.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7871EEA9-DAC7-4952-9C2F-83E6C3648D1F}|Gateway\\MT3Gateway-Step3\\MT3Gateway-Step3.csproj|solutionrelative:gateway\\mt3gateway-step3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-status\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7CF2A30-8589-4C2F-A4D6-D13CCA8A0646}|Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj|solutionrelative:gateway\\mt3gateway-status\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92194FD9-BE26-4FCF-A53F-DDAC68CEBAA8}|Gateway\\MT3Gateway-Step1\\MT3Gateway-Step1.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step1\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92194FD9-BE26-4FCF-A53F-DDAC68CEBAA8}|Gateway\\MT3Gateway-Step1\\MT3Gateway-Step1.csproj|solutionrelative:gateway\\mt3gateway-step1\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC2EA786-5915-4391-9EA8-22AED970A9C0}|Gateway\\MT3Gateway-Step2\\MT3Gateway-Step2.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step2\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC2EA786-5915-4391-9EA8-22AED970A9C0}|Gateway\\MT3Gateway-Step2\\MT3Gateway-Step2.csproj|solutionrelative:gateway\\mt3gateway-step2\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7871EEA9-DAC7-4952-9C2F-83E6C3648D1F}|Gateway\\MT3Gateway-Step3\\MT3Gateway-Step3.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step3\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7871EEA9-DAC7-4952-9C2F-83E6C3648D1F}|Gateway\\MT3Gateway-Step3\\MT3Gateway-Step3.csproj|solutionrelative:gateway\\mt3gateway-step3\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DA8DDDD-B4DB-4E37-BA1B-DDAEE91345D8}|Gateway\\MT3Gateway-Step4\\MT3Gateway-Step4.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step4\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DA8DDDD-B4DB-4E37-BA1B-DDAEE91345D8}|Gateway\\MT3Gateway-Step4\\MT3Gateway-Step4.csproj|solutionrelative:gateway\\mt3gateway-step4\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step5\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|solutionrelative:gateway\\mt3gateway-step5\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-gateway\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0734B0F-A81F-4E57-AA7E-9051CB8979EB}|Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj|solutionrelative:gateway\\mt3gateway-gateway\\cloudrolenameinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\mt3gateway-web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\mt3gateway-web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step5\\mt3gateway-step5.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|solutionrelative:gateway\\mt3gateway-step5\\mt3gateway-step5.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step5\\mt3gateway-step5.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|solutionrelative:gateway\\mt3gateway-step5\\mt3gateway-step5.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\mt3gateway-web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\mt3gateway-web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{593F6325-2656-47CB-ADBE-5CBC2DC6EEA5}|Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj|solutionrelative:gateway\\mt3gateway-web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|c:\\mip\\azureautomations\\microservices\\gateway\\mt3gateway-step5\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2B6D5D8B-E971-4F18-B634-8EB38D8FFF42}|Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj|solutionrelative:gateway\\mt3gateway-step5\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|c:\\mip\\azureautomations\\microservices\\mathtrickcore\\mathtrickcore.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F51F0330-BDA8-43F7-BA5C-4E88B4524D25}|MathTrickCore\\MathTrickCore.csproj|solutionrelative:mathtrickcore\\mathtrickcore.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 373,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{007a3a6b-b5b2-454d-a2bd-cf929f989be2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1529714798:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:876486801:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:310861348:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServiceBusProvider.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\ServiceBusProvider.cs",
+              "RelativeDocumentMoniker": "MathTrickCore\\Providers\\ServiceBusProvider.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\ServiceBusProvider.cs",
+              "RelativeToolTip": "MathTrickCore\\Providers\\ServiceBusProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T17:14:35.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-10-23T03:06:06.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CalculationService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step4\\Services\\CalculationService.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step4\\Services\\CalculationService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step4\\Services\\CalculationService.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step4\\Services\\CalculationService.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T04:02:09.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "variables.env",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\variables.env",
+              "RelativeDocumentMoniker": "variables.env",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\variables.env",
+              "RelativeToolTip": "variables.env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-23T03:06:07.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step2\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step2\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step2\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step2\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAApwCwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:34:48.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CalculateAllService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\Services\\CalculateAllService.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Gateway\\Services\\CalculateAllService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\Services\\CalculateAllService.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Gateway\\Services\\CalculateAllService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAIAxwC8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T04:24:53.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Dockerfile",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Dockerfile",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Dockerfile",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T03:25:48.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\Dockerfile",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Gateway\\Dockerfile",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\Dockerfile",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Gateway\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-28T03:00:14.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CalculationService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\Services\\CalculationService.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step5\\Services\\CalculationService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\Services\\CalculationService.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step5\\Services\\CalculationService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwCAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T04:47:49.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebCalculationService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Services\\WebCalculationService.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Services\\WebCalculationService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Services\\WebCalculationService.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Services\\WebCalculationService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwCQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T03:32:59.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ICalculationService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Interfaces\\ICalculationService.cs",
+              "RelativeDocumentMoniker": "MathTrickCore\\Interfaces\\ICalculationService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Interfaces\\ICalculationService.cs",
+              "RelativeToolTip": "MathTrickCore\\Interfaces\\ICalculationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T17:14:53.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DaprEventBusProvider.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\DaprEventBusProvider.cs",
+              "RelativeDocumentMoniker": "MathTrickCore\\Providers\\DaprEventBusProvider.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\DaprEventBusProvider.cs",
+              "RelativeToolTip": "MathTrickCore\\Providers\\DaprEventBusProvider.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAUwEMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T04:05:05.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Microsoft.VisualStudio.Docker.Compose.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "RelativeToolTip": "..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ViewState": "AgIAALoAAAAAAAAAAADwv8cAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-10-27T04:57:45.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RabbitMQProvider.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\RabbitMQProvider.cs",
+              "RelativeDocumentMoniker": "MathTrickCore\\Providers\\RabbitMQProvider.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\RabbitMQProvider.cs",
+              "RelativeToolTip": "MathTrickCore\\Providers\\RabbitMQProvider.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAEwB0AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:29:05.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MT3Gateway-Gateway.http",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.http",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.http",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.http",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-10-25T05:31:38.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step5\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step5\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:34:08.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Program.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAYwBsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T03:25:40.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Status\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Status\\Program.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAYwDgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T04:09:15.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step4\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step4\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step4\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step4\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:34:38.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IWebCalculationService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Services\\IWebCalculationService.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Services\\IWebCalculationService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Services\\IWebCalculationService.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Services\\IWebCalculationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T04:43:41.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CommonExtensions.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Extensions\\CommonExtensions.cs",
+              "RelativeDocumentMoniker": "MathTrickCore\\Extensions\\CommonExtensions.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Extensions\\CommonExtensions.cs",
+              "RelativeToolTip": "MathTrickCore\\Extensions\\CommonExtensions.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAewD0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:35:15.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step1\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step1\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step1\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step1\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T04:09:23.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAiwFEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T04:44:07.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Gateway\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Gateway\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAApwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T04:08:54.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-25T05:58:10.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DaprServiceProvider.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\DaprServiceProvider.cs",
+              "RelativeDocumentMoniker": "MathTrickCore\\Providers\\DaprServiceProvider.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Providers\\DaprServiceProvider.cs",
+              "RelativeToolTip": "MathTrickCore\\Providers\\DaprServiceProvider.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAmwDYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T03:13:06.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CalculationService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step2\\Services\\CalculationService.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step2\\Services\\CalculationService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step2\\Services\\CalculationService.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step2\\Services\\CalculationService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswDkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T04:01:46.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CalculationService.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step1\\Services\\CalculationService.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step1\\Services\\CalculationService.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step1\\Services\\CalculationService.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step1\\Services\\CalculationService.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAswDcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:19:53.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MT3Gateway-Status.csproj",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Status\\MT3Gateway-Status.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-27T03:24:12.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Status\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Status\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-27T03:49:05.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "MT3Gateway-Gateway.csproj",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Gateway\\MT3Gateway-Gateway.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-25T06:09:07.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ICommunicationsProvider.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Interfaces\\ICommunicationsProvider.cs",
+              "RelativeDocumentMoniker": "MathTrickCore\\Interfaces\\ICommunicationsProvider.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\Interfaces\\ICommunicationsProvider.cs",
+              "RelativeToolTip": "MathTrickCore\\Interfaces\\ICommunicationsProvider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T03:13:43.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:24:39.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step3\\Program.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step3\\Program.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step3\\Program.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:34:43.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Status\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Status\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Status\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:31:00.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step1\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step1\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step1\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step1\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:30:21.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step2\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step2\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step2\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step2\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:30:08.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step3\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step3\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step3\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step3\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:29:53.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step4\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step4\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step4\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step4\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:29:27.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step5\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step5\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:29:06.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "CloudRoleNameInitializer.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\CloudRoleNameInitializer.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Gateway\\CloudRoleNameInitializer.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Gateway\\CloudRoleNameInitializer.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Gateway\\CloudRoleNameInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:25:04.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Error.cshtml.cs",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\Error.cshtml.cs",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Pages\\Error.cshtml.cs",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\Error.cshtml.cs",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Pages\\Error.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T05:25:42.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-25T05:25:37.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "MT3Gateway-Web.csproj",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-25T03:25:17.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "MT3Gateway-Step5.http",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.http",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.http",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.http",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-10-25T04:01:05.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-25T03:27:46.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "MT3Gateway-Step5",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step5\\MT3Gateway-Step5.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-25T03:32:17.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\appsettings.json",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\appsettings.json",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-25T03:27:40.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "MT3Gateway-Web",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Web\\MT3Gateway-Web.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-25T03:20:37.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\Dockerfile",
+              "RelativeDocumentMoniker": "Gateway\\MT3Gateway-Step5\\Dockerfile",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\Gateway\\MT3Gateway-Step5\\Dockerfile",
+              "RelativeToolTip": "Gateway\\MT3Gateway-Step5\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-25T03:25:57.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "MathTrickCore",
+              "DocumentMoniker": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\MathTrickCore.csproj",
+              "RelativeDocumentMoniker": "MathTrickCore\\MathTrickCore.csproj",
+              "ToolTip": "C:\\MIP\\AzureAutomations\\Microservices\\MathTrickCore\\MathTrickCore.csproj",
+              "RelativeToolTip": "MathTrickCore\\MathTrickCore.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-23T05:33:35.453Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 155,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

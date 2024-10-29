@@ -1,0 +1,251 @@
+services:
+  gateway:
+    image: mt3gateway-gateway:dev
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "MT3Gateway-Gateway"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages;/.nuget/fallbackpackages2
+    volumes:
+      - C:\MIP\AzureAutomations\Microservices\Gateway\MT3Gateway-Gateway:/app:rw
+      - C:\MIP\AzureAutomations\Microservices:/src:rw
+      - C:\Users\makizhne\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\makizhne\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files\DevExpress 23.2\Components\Offline Packages:/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/.nuget/fallbackpackages2:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  \"/app/bin/Debug/net8.0/MT3Gateway-Gateway.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true
+  step1:
+    image: mt3gateway-step1:dev
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "MT3Gateway-Step1"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages;/.nuget/fallbackpackages2
+    volumes:
+      - C:\MIP\AzureAutomations\Microservices\Gateway\MT3Gateway-Step1:/app:rw
+      - C:\MIP\AzureAutomations\Microservices:/src:rw
+      - C:\Users\makizhne\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\makizhne\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files\DevExpress 23.2\Components\Offline Packages:/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/.nuget/fallbackpackages2:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  \"/app/bin/Debug/net8.0/MT3Gateway-Step1.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true
+
+  step2:
+    image: mt3gateway-step2:dev
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "MT3Gateway-Step2"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages;/.nuget/fallbackpackages2
+    volumes:
+      - C:\MIP\AzureAutomations\Microservices\Gateway\MT3Gateway-Step2:/app:rw
+      - C:\MIP\AzureAutomations\Microservices:/src:rw
+      - C:\Users\makizhne\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\makizhne\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files\DevExpress 23.2\Components\Offline Packages:/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/.nuget/fallbackpackages2:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  \"/app/bin/Debug/net8.0/MT3Gateway-Step2.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true
+
+  step3:
+    image: mt3gateway-step3:dev
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "MT3Gateway-Step3"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages;/.nuget/fallbackpackages2
+    volumes:
+      - C:\MIP\AzureAutomations\Microservices\Gateway\MT3Gateway-Step3:/app:rw
+      - C:\MIP\AzureAutomations\Microservices:/src:rw
+      - C:\Users\makizhne\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\makizhne\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files\DevExpress 23.2\Components\Offline Packages:/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/.nuget/fallbackpackages2:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  \"/app/bin/Debug/net8.0/MT3Gateway-Step3.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true
+
+  step4:
+    image: mt3gateway-step4:dev
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "MT3Gateway-Step4"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages;/.nuget/fallbackpackages2
+    volumes:
+      - C:\MIP\AzureAutomations\Microservices\Gateway\MT3Gateway-Step4:/app:rw
+      - C:\MIP\AzureAutomations\Microservices:/src:rw
+      - C:\Users\makizhne\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\makizhne\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files\DevExpress 23.2\Components\Offline Packages:/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/.nuget/fallbackpackages2:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  \"/app/bin/Debug/net8.0/MT3Gateway-Step4.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true
+
+  step5:
+    image: mt3gateway-step5:dev
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "MT3Gateway-Step5"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages;/.nuget/fallbackpackages2
+    volumes:
+      - C:\MIP\AzureAutomations\Microservices\Gateway\MT3Gateway-Step5:/app:rw
+      - C:\MIP\AzureAutomations\Microservices:/src:rw
+      - C:\Users\makizhne\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\makizhne\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files\DevExpress 23.2\Components\Offline Packages:/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/.nuget/fallbackpackages2:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  \"/app/bin/Debug/net8.0/MT3Gateway-Step5.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true
+
+  web:
+    image: mt3gateway-web:dev
+    build:
+      args:
+        LAUNCHING_FROM_VS: true
+        BUILD_CONFIGURATION: Debug
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "MT3Gateway-Web"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages;/.nuget/fallbackpackages2
+    volumes:
+      - C:\MIP\AzureAutomations\Microservices\Gateway\MT3Gateway-Web:/app:rw
+      - C:\MIP\AzureAutomations\Microservices:/src:rw
+      - C:\Users\makizhne\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\makizhne\.nuget\packages:/.nuget/packages:ro
+      - C:\Program Files\DevExpress 23.2\Components\Offline Packages:/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/.nuget/fallbackpackages2:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\ASP.NET\Https:/home/app/.aspnet/https:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0:/VSTools:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload:/HotReloadAgent:ro
+
+    entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  \"/app/bin/Debug/net8.0/MT3Gateway-Web.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
+    tty: true

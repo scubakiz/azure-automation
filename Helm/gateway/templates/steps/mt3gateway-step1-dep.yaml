@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mt3gateway-step1-dep
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: mt3gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: mt3gateway-step1-pod
+  template:
+    metadata:
+      annotations:
+        # checksum/config: {{ include (print $.Template.BasePath "/config/mt3gateway-cm.yaml") . | sha256sum }}
+        dapr.io/app-id: "step1"
+{{ include "gatewaydapr" . | indent 8 }}
+{{ include "gatewayconfig" . | indent 8 }}
+      labels:
+        tier: mt3gateway-step1-pod
+        action: calculation
+        color: lime
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - name: mt3gateway-step1
+        image: {{ .Values.repo }}/mt3gateway-step1:{{ .Values.tags.mt3gatewaystep1 }}
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: mt3gateway-config        
+        env:
+        - name: CalcStepVariable
+          value: "2"
+        imagePullPolicy: Always

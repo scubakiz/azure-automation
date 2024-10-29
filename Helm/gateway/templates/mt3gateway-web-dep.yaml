@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mt3gateway-web-dep
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: mt3gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: mt3gateway-web-pod
+  template:
+    metadata:
+      annotations:
+        dapr.io/app-id: "web"        
+{{ include  "gatewaydapr" . | indent 8 }}
+{{ include  "gatewayconfig" . | indent 8 }}
+      labels:
+        tier: mt3gateway-web-pod
+        color: lime
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux          
+      containers:
+      - name: mt3gateway-web
+        image: {{ .Values.repo }}/mt3gateway-web:{{ .Values.tags.mt3gatewayweb }}
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: mt3gateway-config
+        env:
+        - name: MT3GatewayAPIEndpoint
+          value: http://mt3gateway-gateway-svc:5000

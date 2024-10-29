@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|c:\\mip\\ktb-v2\\current\\labs\\mathtrickv2\\mathtrickcore\\mathtrickcore.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|solutionrelative:mathtrickcore.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|c:\\mip\\ktb-v2\\current\\labs\\mathtrickv2\\mathtrickcore\\restapihelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|solutionrelative:restapihelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|c:\\mip\\ktb-v2\\current\\labs\\mathtrickv2\\mathtrickcore\\models\\mathtrickexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|solutionrelative:models\\mathtrickexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|c:\\mip\\ktb-v2\\current\\labs\\mathtrickv2\\mathtrickcore\\models\\calculationstepmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0969465-D1ED-4F0E-9FEB-DD4B5AFA7F91}|MathTrickCore.csproj|solutionrelative:models\\calculationstepmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1529714798:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:876486801:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:310861348:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MathTrickCore",
+              "DocumentMoniker": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\MathTrickCore.csproj",
+              "RelativeDocumentMoniker": "MathTrickCore.csproj",
+              "ToolTip": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\MathTrickCore.csproj",
+              "RelativeToolTip": "MathTrickCore.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-03T00:09:53.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MathTrickException.cs",
+              "DocumentMoniker": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\Models\\MathTrickException.cs",
+              "RelativeDocumentMoniker": "Models\\MathTrickException.cs",
+              "ToolTip": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\Models\\MathTrickException.cs",
+              "RelativeToolTip": "Models\\MathTrickException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T00:08:10.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CalculationStepModel.cs",
+              "DocumentMoniker": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\Models\\CalculationStepModel.cs",
+              "RelativeDocumentMoniker": "Models\\CalculationStepModel.cs",
+              "ToolTip": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\Models\\CalculationStepModel.cs",
+              "RelativeToolTip": "Models\\CalculationStepModel.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAgwBsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T00:06:56.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RestApiHelper.cs",
+              "DocumentMoniker": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\RestApiHelper.cs",
+              "RelativeDocumentMoniker": "RestApiHelper.cs",
+              "ToolTip": "C:\\MIP\\KTB-V2\\Current\\Labs\\MathTrickV2\\MathTrickCore\\RestApiHelper.cs",
+              "RelativeToolTip": "RestApiHelper.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T23:57:33.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 328,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{5a4e9529-b6a0-46b5-be4f-0f0b239bc0eb}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

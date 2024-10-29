@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mt3gateway-step4-dep
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: mt3gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: mt3gateway-step4-pod
+  template:
+    metadata:
+      annotations:
+        dapr.io/app-id: "step4"
+{{ include  "gatewaydapr" . | indent 8 }}
+{{ include  "gatewayconfig" . | indent 8 }}
+      labels:
+        tier: mt3gateway-step4-pod
+        action: calculation
+        color: lime
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux       
+      containers:
+      - name: mt3gateway-step4
+        image: {{ .Values.repo }}/mt3gateway-step4:{{ .Values.tags.mt3gatewaystep4 }}
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: mt3gateway-config        
+        env:
+        - name: CalcStepVariable
+          value: "2"

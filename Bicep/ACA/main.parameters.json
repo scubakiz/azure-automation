@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "prefix": {
+      "value": "atlas"
+    },
+    "suffix": {
+      "value": "kiz21"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "registryName": {
+      "value": "atlasdevops"
+    },
+    "registryResourceGroup": {
+      "value": "atlas-devops-rg"
+    },
+    "registrySubscriptionId": {
+      "value": "e7b8887f-a99b-42ee-8fb3-c078b3eae281"
+    },
+    "keyVaultName": {
+      "value": "testing-atlas-keyvault"
+    },
+    "keyVaultResourceGroup": {
+      "value": "atlas-testing-rg"
+    },
+    "logAnalyticsWorkspaceName": {
+      "value": "dev-atlas-law"
+    },
+    "logAnalyticsWorkspaceResourceGroup": {
+      "value": "atlas_dev_rg"
+    },
+    "keyVaultBaseUrl": {
+      "value": ".vault.azure.net/secrets/"
+    },
+    "workCoordinatorImageTag": {
+      "value": "latest"
+    },
+    "classifyWorkerImageTag": {
+      "value": "latest"
+    },
+    "imageDeleteWorkerImageTag": {
+      "value": "latest"
+    },
+    "mailProcessWorkerImageTag": {
+      "value": "latest"
+    },
+    "sampleDbWorkerImageTag": {
+      "value": "latest"
+    },
+    "sampleWorkerImageTag": {
+      "value": "latest"
+    },
+    "storageWorkerImageTag": {
+      "value": "latest"
+    },
+    "tabulaGeocodeWorkerImageTag": {
+      "value": "latest"
+    },
+    "tabulaMergeWorkerImageTag": {
+      "value": "latest"
+    },
+    "tabulaPostgresWorkerImageTag": {
+      "value": "latest"
+    },
+    "tabulaSpatializerOrchestratorImageTag": {
+      "value": "latest"
+    },
+    "tabulaTargetingWorkerImageTag": {
+      "value": "latest"
+    },
+    "tabulaYentaWorkerImageTag": {
+      "value": "latest"
+    },
+    "mySqlDatabaseCacheImageTag": {
+      "value": "latest"
+    },
+    "postgreSqlDatabaseCacheImageTag": {
+      "value": "latest"
+    },
+    "visitorGuideCollectWorkerImageTag": {
+      "value": "latest"
+    },
+    "loggingLevel": {
+      "value": "Debug"
+    }
+  }
+}

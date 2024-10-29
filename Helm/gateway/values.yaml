@@ -1,0 +1,17 @@
+repo: kizmain.azurecr.io
+namespace: gateway
+platform: dotnet
+tags:
+  mt3gatewayweb: latest
+  mt3gatewaygateway: latest
+  mt3gatewaystep1: latest
+  mt3gatewaystep2: latest
+  mt3gatewaystep2nodejs: latest
+  mt3gatewaystep3: latest
+  mt3gatewaystep4: latest
+  mt3gatewaystep5: latest
+AppInsightsInstrumentationKey: 950301e2-21ea-4ac9-b333-5b76d19b898b
+AppInsightsConnectionString: "InstrumentationKey=950301e2-21ea-4ac9-b333-5b76d19b898b;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/"
+
+
+

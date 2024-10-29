@@ -1,0 +1,913 @@
+name: dockercompose6795989992563805569
+services:
+  broker:
+    container_name: rabbit
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: rabbitmq:3-management
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+      - mode: ingress
+        target: 5671
+        published: "5671"
+        protocol: tcp
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: rabbitmq_data
+        target: /var/lib/rabbitmq
+        volume: {}
+  gateway:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Gateway/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Gateway
+    container_name: mt3gateway
+    depends_on:
+      broker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      MT3GatewayStatusEndpoint: status
+      MT3GatewayStep1Endpoint: step1
+      MT3GatewayStep2Endpoint: step2
+      MT3GatewayStep3Endpoint: step3
+      MT3GatewayStep4Endpoint: step4
+      MT3GatewayStep5Endpoint: step5
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: mt3gateway-gateway
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Gateway
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Gateway.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  gateway-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - gateway
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Gateway
+    depends_on:
+      gateway:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:gateway
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+  status:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Status/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Status
+    container_name: mt3status
+    depends_on:
+      broker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+      STATUS_READER: "true"
+    image: mt3gateway-status
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Status
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Status.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  status-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - status
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Status
+    depends_on:
+      status:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:status
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+  step1:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Step1/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Step1
+    container_name: mt3step1
+    depends_on:
+      broker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: mt3gateway-step1
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Step1
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Step1.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  step1-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - step1
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Step1
+    depends_on:
+      step1:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:step1
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+  step2:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Step2/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Step2
+    container_name: mt3step2
+    depends_on:
+      broker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: mt3gateway-step2
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Step2
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Step2.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  step2-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - step2
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Step2
+    depends_on:
+      step2:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:step2
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+  step3:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Step3/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Step3
+    container_name: mt3step3
+    depends_on:
+      broker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: mt3gateway-step3
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Step3
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Step3.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  step3-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - step3
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Step3
+    depends_on:
+      step3:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:step3
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+  step4:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Step4/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Step4
+    container_name: mt3step4
+    depends_on:
+      broker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: mt3gateway-step4
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Step4
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Step4.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  step4-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - step4
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Step4
+    depends_on:
+      step4:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:step4
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+  step5:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Step5/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Step5
+    container_name: mt3step5
+    depends_on:
+      broker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: mt3gateway-step5
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Step5
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Step5.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  step5-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - step5
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Step5
+    depends_on:
+      step5:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:step5
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+  web:
+    build:
+      context: C:\MIP\AzureAutomations\Microservices
+      dockerfile: Gateway/MT3Gateway-Web/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: MT3Gateway-Web
+    container_name: mt3web
+    depends_on:
+      status:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      FAILURE_RATE: "70"
+      MT3GatewayAPIEndpoint: gateway
+      RABBITMQ_DEFAULT_HOST: broker
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_VHOST: /
+      RETRIES: "5"
+      STATUS_QUEUE_NAME: status_queue
+    image: mt3gateway-web
+    labels:
+      com.microsoft.visual-studio.project-name: MT3Gateway-Web
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages --additionalProbingPath /.nuget/fallbackpackages2  "/app/MT3Gateway-Web.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "5000"
+        protocol: tcp
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\makizhne\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\makizhne\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  web-dapr:
+    command:
+      - ./daprd
+      - --app-id
+      - web
+      - --app-port
+      - "8080"
+      - --resources-path
+      - /components
+    container_name: Dapr-Web
+    depends_on:
+      web:
+        condition: service_started
+        required: true
+    image: daprio/daprd:latest
+    network_mode: service:web
+    volumes:
+      - type: bind
+        source: C:\MIP\AzureAutomations\Microservices\components
+        target: /components
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose6795989992563805569_default
+volumes:
+  rabbitmq_data:
+    name: dockercompose6795989992563805569_rabbitmq_data

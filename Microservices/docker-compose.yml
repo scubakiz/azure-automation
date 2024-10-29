@@ -1,0 +1,223 @@
+version: '3.4'
+
+services:
+  ################################################### Broker ###################################################
+  broker:
+    image: rabbitmq:3-management
+    container_name: rabbit
+    ports:
+        - "15672:15672"
+        - "5671:5671"
+        - "5672:5672"
+    env_file:
+      - 'variables.env'
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+  ################################################### Web ###################################################
+  web:
+    image: ${DOCKER_REGISTRY-}mt3gateway-web
+    container_name: mt3web
+    build:
+      context: .
+      dockerfile: Gateway/MT3Gateway-Web/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:     
+        - MT3GatewayAPIEndpoint=gateway        
+    env_file:
+      - 'variables.env'
+    
+  web-dapr:
+    image: "daprio/daprd:latest"
+    container_name: Dapr-Web
+    command: [ "./daprd", "--app-id", "web", "--app-port", "8080", "--resources-path","/components" ]
+    depends_on:
+    - web
+    volumes:
+    - "./components:/components"
+    network_mode: "service:web"
+
+  ################################################### Gateway ###################################################
+  gateway:
+    image: ${DOCKER_REGISTRY-}mt3gateway-gateway
+    container_name: mt3gateway
+    build:
+      context: .
+      dockerfile: Gateway/MT3Gateway-Gateway/Dockerfile
+    ports:
+      - "8080"
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - MT3GatewayStep1Endpoint=step1
+        - MT3GatewayStep2Endpoint=step2
+        - MT3GatewayStep3Endpoint=step3
+        - MT3GatewayStep4Endpoint=step4
+        - MT3GatewayStep5Endpoint=step5
+        - MT3GatewayStatusEndpoint=status
+    env_file:
+      - 'variables.env'
+    depends_on:
+      - broker
+
+  gateway-dapr:
+    image: "daprio/daprd:latest"
+    container_name: Dapr-Gateway
+    command: [ "./daprd", "--app-id", "gateway", "--app-port", "8080", "--resources-path","/components" ]
+    depends_on:
+    - gateway
+    volumes:
+    - "./components:/components"
+    network_mode: "service:gateway"
+
+  ################################################### Status ###################################################
+  # status:
+  #   image: ${DOCKER_REGISTRY-}mt3gateway-status
+  #   container_name: mt3status
+  #   build:
+  #     context: .
+  #     dockerfile: Gateway/MT3Gateway-Status/Dockerfile
+  #   ports:
+  #     - "8080"
+  #   env_file:
+  #     - 'variables.env'
+  #   environment:
+  #     - STATUS_READER=true
+  #   depends_on:
+  #     - broker
+  
+  # status-dapr:
+  #   image: "daprio/daprd:latest"
+  #   container_name: Dapr-Status
+  #   command: [ "./daprd", "--app-id", "status", "--app-port", "8080", "--resources-path","/components" ]
+  #   depends_on:
+  #   - status
+  #   volumes:
+  #   - "./components:/components"
+  #   network_mode: "service:status"
+
+  ################################################### Step1 ###################################################
+  step1:
+    image: ${DOCKER_REGISTRY-}mt3gateway-step1
+    container_name: mt3step1
+    build:
+      context: .
+      dockerfile: Gateway/MT3Gateway-Step1/Dockerfile
+    ports:
+      - "8080"
+    env_file:
+      - 'variables.env'
+    depends_on:
+      - broker
+   
+  step1-dapr:
+    image: "daprio/daprd:latest"
+    container_name: Dapr-Step1
+    command: [ "./daprd", "--app-id", "step1", "--app-port", "8080", "--resources-path","/components" ]
+    depends_on:
+    - step1
+    volumes:
+    - "./components:/components"
+    network_mode: "service:step1"
+
+    
+  ################################################### Step2 ###################################################
+  step2:
+    image: ${DOCKER_REGISTRY-}mt3gateway-step2
+    container_name: mt3step2
+    build:
+        context: .
+        dockerfile: Gateway/MT3Gateway-Step2/Dockerfile
+    ports:
+    - "8080"
+    env_file:
+    - 'variables.env'
+    depends_on:
+    - broker
+
+  step2-dapr:
+    image: "daprio/daprd:latest"
+    container_name: Dapr-Step2
+    command: [ "./daprd", "--app-id", "step2", "--app-port", "8080", "--resources-path","/components" ]
+    depends_on:
+    - step2
+    volumes:
+    - "./components:/components"
+    network_mode: "service:step2" 
+
+
+  ################################################### Step3 ###################################################
+  step3:
+    image: ${DOCKER_REGISTRY-}mt3gateway-step3
+    container_name: mt3step3
+    build:
+        context: .
+        dockerfile: Gateway/MT3Gateway-Step3/Dockerfile
+    ports:
+    - "8080"
+    env_file:
+    - 'variables.env'
+    depends_on:
+    - broker
+
+  step3-dapr:
+    image: "daprio/daprd:latest"
+    container_name: Dapr-Step3
+    command: [ "./daprd", "--app-id", "step3", "--app-port", "8080", "--resources-path","/components" ]
+    depends_on:
+    - step3
+    volumes:
+    - "./components:/components"
+    network_mode: "service:step3" 
+
+################################################ Step4 ###################################################
+  step4:
+    image: ${DOCKER_REGISTRY-}mt3gateway-step4
+    container_name: mt3step4
+    build:
+        context: .
+        dockerfile: Gateway/MT3Gateway-Step4/Dockerfile
+    ports:
+      - "8080"
+    env_file:
+    - 'variables.env'
+    depends_on:
+    - broker
+
+  step4-dapr:
+    image: "daprio/daprd:latest"
+    container_name: Dapr-Step4
+    command: [ "./daprd", "--app-id", "step4", "--app-port", "8080", "--resources-path","/components" ]
+    depends_on:
+    - step4
+    volumes:
+    - "./components:/components"
+    network_mode: "service:step4"  
+
+  ################################################ Step5 ###################################################
+  step5:
+    image: mt3gateway-step5
+    container_name: mt3step5
+    build:
+        context: .
+        dockerfile: Gateway/MT3Gateway-Step5/Dockerfile
+    ports:
+      - "8080"
+    env_file:
+    - 'variables.env'
+    depends_on:
+    - broker
+
+  step5-dapr:
+    image: "daprio/daprd:latest"
+    container_name: Dapr-Step5
+    command: [ "./daprd", "--app-id", "step5", "--app-port", "8080", "--resources-path","/components" ]
+    depends_on:
+    - step5
+    volumes:
+    - "./components:/components"
+    network_mode: "service:step5"  
+
+volumes:
+  rabbitmq_data:
+    

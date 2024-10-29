@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mt3gateway-gateway-dep
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: mt3gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: mt3gateway-gateway-pod
+  template:
+    metadata:
+      annotations:
+        dapr.io/app-id: "gateway"
+{{ include  "gatewaydapr" . | indent 8 }}
+      labels:
+        tier: mt3gateway-gateway-pod
+        color: lime
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - name: mt3gateway-gateway
+        image: {{ .Values.repo }}/mt3gateway-gateway:{{ .Values.tags.mt3gatewaygateway }}
+        ports: 
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: mt3gateway-config
+        env:
+        - name: MT3GatewayStep1Endpoint
+        # old value: http://mt3gateway-step1-svc:5010
+          value: step1
+        - name: MT3GatewayStep2Endpoint
+          value: step2
+        - name: MT3GatewayStep3Endpoint
+          value: step3
+        - name: MT3GatewayStep4Endpoint
+          value: step4
+        - name: MT3GatewayStep5Endpoint
+          value: step5
+          
+
