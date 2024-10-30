@@ -53,6 +53,11 @@ jobs:
       - name: Update Image Tag in GitHub Secret
         env:
           GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          permissions: |
+            contents: write
+            secrets: write
         run: |          
-          gh secret set GATEWAY_IMAGE_TAG --body "${{ env.NEW_TAG }}"
+          gh secret set "GATEWAY_IMAGE_TAG" --body "${{ env.NEW_TAG }}"
           
