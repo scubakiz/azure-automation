@@ -53,5 +53,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |          
-          gh secret set GATEWAY_IMAGE_TAG --body "${{ env.NEW_TAG }}" -v all
+          gh secret set GATEWAY_IMAGE_TAG --body "${{ env.NEW_TAG }}" -v all --org scubakiz
           
