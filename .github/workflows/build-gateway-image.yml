@@ -1,6 +1,7 @@
 name: Build Gateway Image - CI
 
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
     paths:
@@ -52,6 +53,6 @@ jobs:
 
       - name: Save image tag as variable
         env:
-            GH_TOKEN: ${{ secrets.TOKEN }}
+            GH_TOKEN: ${{ github.token }}
         run: |
-          gh variable set "GATEWAY_IMAGE_TAG" "${{ env.NEW_TAG }}"
+          gh variable set "GATEWAY_IMAGE_TAG" --body "${{ env.NEW_TAG }}"
