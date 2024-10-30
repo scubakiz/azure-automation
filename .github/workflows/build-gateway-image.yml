@@ -49,3 +49,10 @@ jobs:
           docker push "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"
           docker push "${{ env.FULL_IMAGE}}:latest"
 
+      - name: Logout from Azure Container Registry
+        run: az acr logout --name $REPO
+
+      - name: Update Image Tag in GitHub Secret
+        run: |
+          gh secret set GATEWAY_IMAGE_TAG --body "${{ env.NEW_TAG }}" -v all
+          
