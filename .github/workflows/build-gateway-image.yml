@@ -30,25 +30,25 @@ jobs:
           echo "NEW_TAG=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
           echo "FULL_IMAGE=$REPO/$IMAGE_NAME" >> $GITHUB_ENV
 
-      - name: Build the Docker image
-        run: |
-          docker build ./Microservices/ --file Microservices/Gateway/MT3Gateway-Gateway/Dockerfile --tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"          
-          docker tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}" "${{ env.FULL_IMAGE}}:latest"
+      # - name: Build the Docker image
+      #   run: |
+      #     docker build ./Microservices/ --file Microservices/Gateway/MT3Gateway-Gateway/Dockerfile --tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"          
+      #     docker tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}" "${{ env.FULL_IMAGE}}:latest"
 
-      - name: Azure login
-        uses: azure/login@v2
-        with:          
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      # - name: Azure login
+      #   uses: azure/login@v2
+      #   with:          
+      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
+      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Login to Azure Container Registry
-        run: az acr login --name $REPO
+      # - name: Login to Azure Container Registry
+      #   run: az acr login --name $REPO
 
-      - name: Push the Docker image
-        run: |
-          docker push "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"
-          docker push "${{ env.FULL_IMAGE}}:latest"
+      # - name: Push the Docker image
+      #   run: |
+      #     docker push "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"
+      #     docker push "${{ env.FULL_IMAGE}}:latest"
 
       - name: Update Image Tag in GitHub Secret
         env:
