@@ -1,0 +1,26 @@
+name: Build Gateway Image - CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+    - Microservices/Gateway/MT3Gateway-Gateway/**
+  pull_request:
+    branches: [ "main" ]
+    paths:
+    - Microservices/Gateway/MT3Gateway-Gateway/**
+env:
+  REPO: kizmain.azurecr.io
+  IMAGE_NAME: mt3gateway-gateway
+  FULL_IMAGE: "$REPO/$IMAGE_NAME"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: |
+        echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
+        echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> "$GITHUB_ENV"        
+        docker build . --file Microservices/Gateway/MT3Gateway-Gateway/Dockerfile --tag "$FULL_IMAGE:${{ env.sha_short }}"
+        docker tag "$FULL_IMAGE:${{ env.sha_short }}" "$FULL_IMAGE:latest"
