@@ -55,4 +55,4 @@ jobs:
         env:
             GH_TOKEN: ${{ secrets.TOKEN }}
         run: |
-          gh variable set "GATEWAY_IMAGE_TAG" "${{ env.NEW_TAG }}"
+          gh variable set "GATEWAY_IMAGE_TAG" --body "${{ env.NEW_TAG }}"
