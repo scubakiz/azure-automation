@@ -26,5 +26,5 @@ jobs:
 
       - name: Build the Docker image
         run: |
-          docker build ./Microservices/Gateway/ --file Microservices/Gateway/MT3Gateway-Gateway/Dockerfile --tag "${{ env.FULL_IMAGE}}:${{ env.sha_short }}"          
+          docker build ./Microservices/ --file Microservices/Gateway/MT3Gateway-Gateway/Dockerfile --tag "${{ env.FULL_IMAGE}}:${{ env.sha_short }}"          
           docker tag "${{ env.FULL_IMAGE}}:${{ env.sha_short }}" "${{ env.FULL_IMAGE}}:latest"
