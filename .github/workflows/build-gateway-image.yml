@@ -51,10 +51,6 @@ jobs:
           docker push "${{ env.FULL_IMAGE}}:latest"
 
       - name: Update Image Tag in GitHub Secret
-        with:
-          permissions: | 
-            contents: write
-            secrets: write
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token  }}
