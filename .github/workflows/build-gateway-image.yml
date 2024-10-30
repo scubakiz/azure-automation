@@ -21,10 +21,28 @@ jobs:
 
       - name: Declare variables
         run: |
-          echo "sha_short=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+          echo "NEW_TAG=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
           echo "FULL_IMAGE=$REPO/$IMAGE_NAME" >> $GITHUB_ENV
 
       - name: Build the Docker image
         run: |
-          docker build ./Microservices/ --file Microservices/Gateway/MT3Gateway-Gateway/Dockerfile --tag "${{ env.FULL_IMAGE}}:${{ env.sha_short }}"          
-          docker tag "${{ env.FULL_IMAGE}}:${{ env.sha_short }}" "${{ env.FULL_IMAGE}}:latest"
+          docker build ./Microservices/ --file Microservices/Gateway/MT3Gateway-Gateway/Dockerfile --tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"          
+          docker tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}" "${{ env.FULL_IMAGE}}:latest"
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          auth-type: IDENTITY
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
+
+      - name: Login to Azure Container Registry
+        run: az acr login --name $REPO
+
+      - name: Push the Docker image
+        run: |
+          docker push "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"
+          docker push "${{ env.FULL_IMAGE}}:latest"
+
