@@ -50,12 +50,8 @@ jobs:
       #     docker push "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"
       #     docker push "${{ env.FULL_IMAGE}}:latest"
 
-      - uses: hmanzur/actions-set-secret@v2.0.0
-        name: Save the new tag as a secret
-        with:
-          name: "GATEWAY_IMAGE_TAG"
-          value: "${{ env.NEW_TAG }}"
-          repository: 'my-org'
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          org: true
-          visibility: 'all'
+      - name: Save image tag as variable
+        env:
+            GH_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          gh variable set "GATEWAY_IMAGE_TAG" "${{ env.NEW_TAG }}"
