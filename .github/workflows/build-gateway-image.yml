@@ -18,7 +18,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
-  repository-projects: write
+  repository-projects: write  
 
 jobs:
   build:
@@ -55,4 +55,10 @@ jobs:
         env:
             GH_TOKEN: ${{ github.token }}
         run: |
-          gh variable set "GATEWAY_IMAGE_TAG" --body "${{ env.NEW_TAG }}"
+          # gh variable set "GATEWAY_IMAGE_TAG" --body "${{ env.NEW_TAG }}"
+          sed -i "s/mt3gatewaygateway:.*/mt3gatewaygateway: ${{ env.NEW_TAG }}/g" ./Helm/gateway/values.yaml
+          git add .
+          git commit -m "Update gateway image tag"
+          git pull
+          git push
+
