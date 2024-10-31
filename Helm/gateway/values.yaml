@@ -3,7 +3,7 @@ namespace: gateway
 platform: dotnet
 tags:
   mt3gatewayweb: latest
-  mt3gatewaygateway: latest
+  mt3gatewaygateway: 400f3ac
   mt3gatewaystep1: latest
   mt3gatewaystep2: latest
   mt3gatewaystep2nodejs: latest
