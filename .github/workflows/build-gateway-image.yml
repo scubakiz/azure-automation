@@ -57,6 +57,8 @@ jobs:
         run: |
           # gh variable set "GATEWAY_IMAGE_TAG" --body "${{ env.NEW_TAG }}"
           sed -i "s/mt3gatewaygateway:.*/mt3gatewaygateway: ${{ env.NEW_TAG }}/g" ./Helm/gateway/values.yaml
+          git config --global user.name 'scubakiz'
+          git config --global user.email 'scubakize@gmail.com'
           git add .
           git commit -m "Update gateway image tag"
           git pull
