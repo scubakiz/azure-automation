@@ -1,0 +1,67 @@
+name: Build Step4 Image - CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - Microservices/Gateway/MT3Gateway-Step4/**
+  pull_request:
+    branches: ["main"]
+    paths:
+      - Microservices/Gateway/MT3Gateway-Step4/**
+env:
+  REPO: kizmain.azurecr.io
+  IMAGE_NAME: mt3gateway-step4
+  USER_NAME: ${{ secrets.AZURE_USER_NAME }}
+  GITHUB_USER: scubakiz
+  GITHUB_EMAIL: scubakiz@gmail.com
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  repository-projects: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Declare variables
+        run: |
+          echo "NEW_TAG=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+          echo "FULL_IMAGE=$REPO/$IMAGE_NAME" >> $GITHUB_ENV
+
+      - name: Build the Docker image
+        run: |
+          docker build ./Microservices/ --file Microservices/Gateway/MT3Gateway-Step4/Dockerfile --tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"          
+          docker tag "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}" "${{ env.FULL_IMAGE}}:latest"
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Login to Azure Container Registry
+        run: az acr login --name $REPO
+
+      - name: Push the Docker image
+        run: |
+          docker push "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"
+          docker push "${{ env.FULL_IMAGE}}:latest"
+
+      - name: Update values.yaml with the new image tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sed -i "s/mt3gatewaystep4:.*/mt3gatewaystep4: ${{ env.NEW_TAG }}/g" ./Helm/gateway/values.yaml
+          git config --global user.name $GITHUB_USER
+          git config --global user.email $GITHUB_EMAIL
+          git add .
+          git commit -m "CI: Update step4 image tag"
+          git pull
+          git push
