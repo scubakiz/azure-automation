@@ -10,7 +10,7 @@ tags:
   mt3gatewaystep2: f41e4f7
   mt3gatewaystep2nodejs: latest
   mt3gatewaystep3: latest
-  mt3gatewaystep4: latest
+  mt3gatewaystep4: 1ff36b3
   mt3gatewaystep5: latest
 AppInsightsInstrumentationKey: 950301e2-21ea-4ac9-b333-5b76d19b898b
 AppInsightsConnectionString: "InstrumentationKey=950301e2-21ea-4ac9-b333-5b76d19b898b;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/"
