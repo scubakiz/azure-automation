@@ -1,4 +1,4 @@
-name: Build Gateway Image - CI
+name: Deploy Gateway - CD
 
 on:
   workflow_dispatch:
@@ -23,6 +23,7 @@ permissions:
 
 jobs:
   build:
+    name: Deploy Gateway
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +35,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Update values.yaml with the new image tag
+      - name: Upgrade Helm release
         run: |
           az aks get-credentials --resource-group main-rg --name kizaks --overwrite-existing
           helm upgrade -i gateway ./Helm/gateway/
