@@ -1,0 +1,40 @@
+name: Build Gateway Image - CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - Helm/gateway/**
+  pull_request:
+    branches: ["main"]
+    paths:
+      - Helm/gateway/**
+env:
+  USER_NAME: ${{ secrets.AZURE_USER_NAME }}
+  GITHUB_USER: scubakiz
+  GITHUB_EMAIL: scubakiz@gmail.com
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  repository-projects: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Update values.yaml with the new image tag
+        run: |
+          az aks get-credentials --resource-group main-rg --name kizaks --overwrite-existing
+          helm upgrade -i gateway ./Helm/gateway/

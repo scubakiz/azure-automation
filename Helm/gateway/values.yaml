@@ -1,6 +1,8 @@
 repo: kizmain.azurecr.io
 namespace: gateway
 platform: dotnet
+ingress:
+  path: /gateway/(.*)
 tags:
   mt3gatewayweb: latest
   mt3gatewaygateway: ca7ce41
