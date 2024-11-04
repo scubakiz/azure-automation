@@ -54,6 +54,9 @@ jobs:
           docker push "${{ env.FULL_IMAGE}}:${{ env.NEW_TAG }}"
           docker push "${{ env.FULL_IMAGE}}:latest"
 
+      # To allow the CD trigger to fire
+      - uses: actions/checkout@v4
+        
       - name: Update values.yaml with the new image tag
         env:
           GH_TOKEN: ${{ github.token }}
