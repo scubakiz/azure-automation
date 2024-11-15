@@ -1,3 +1,6 @@
 namespace: gatewayprod
 ingress:
   path: /gatewayprod/(.*)
+test: value
+  
+  
